@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Name Studio">
+  <defs>
+    <linearGradient id="ns-neon" x1="10" y1="8" x2="118" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5DFFA8" />
+      <stop offset="0.55" stop-color="#00F58A" />
+      <stop offset="1" stop-color="#00DDC6" />
+    </linearGradient>
+    <filter id="ns-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.6" />
+    </filter>
+
+    <g id="ns-art" fill="none" stroke="url(#ns-neon)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- дерево-схема -->
+      <path d="M64 52V24" />
+      <path d="M64 42 47 32M64 42 81 32" stroke-width="4.4" />
+      <path d="M64 32 54 23M64 32 74 23" stroke-width="4.4" />
+      <g stroke-width="3.4">
+        <ellipse cx="42" cy="29" rx="6.6" ry="3.4" transform="rotate(-22 42 29)" />
+        <ellipse cx="86" cy="29" rx="6.6" ry="3.4" transform="rotate(22 86 29)" />
+        <ellipse cx="49" cy="19" rx="6.2" ry="3.2" transform="rotate(-34 49 19)" />
+        <ellipse cx="79" cy="19" rx="6.2" ry="3.2" transform="rotate(34 79 19)" />
+        <ellipse cx="64" cy="14" rx="6.4" ry="3.3" transform="rotate(90 64 14)" />
+      </g>
+      <!-- монограмма NS -->
+      <path d="M26 112V60l32 48V60" />
+      <path d="M100 71c0-8-8-13-18-13-12 0-18 5-18 13 0 7 7 11 18 11s18 4 18 12c0 8-8 13-19 13-10 0-16-4-18-10" />
+      <!-- отводы-дорожки -->
+      <path d="M26 99H16M100 78h11" stroke-width="3.4" />
+    </g>
+    <g id="ns-nodes" fill="url(#ns-neon)">
+      <circle cx="64" cy="42" r="3.2" />
+      <circle cx="64" cy="24" r="2.8" />
+      <circle cx="14" cy="99" r="3.4" />
+      <circle cx="113" cy="78" r="3.4" />
+      <circle cx="64" cy="82" r="3.2" />
+    </g>
+  </defs>
+
+  <use href="#ns-art" filter="url(#ns-glow)" opacity="0.55" />
+  <use href="#ns-nodes" filter="url(#ns-glow)" opacity="0.55" />
+  <use href="#ns-art" />
+  <use href="#ns-nodes" />
+</svg>
