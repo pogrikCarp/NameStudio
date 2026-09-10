@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /404.html
+
+Host: https://namewebstudio.com
+Sitemap: https://namewebstudio.com/sitemap.xml

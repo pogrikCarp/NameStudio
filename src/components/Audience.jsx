@@ -6,7 +6,7 @@ export default function Audience() {
       <div className="wrap audience__grid">
         {/* Знак студии слева: прозрачность запечена в файл, рамки нет */}
         <div className="audience__art" aria-hidden="true">
-          <img src="/media/brand-art.webp" alt="" loading="lazy" decoding="async" />
+          <img src="/media/brand-art.webp" alt="" width="420" height="420" loading="lazy" decoding="async" />
         </div>
 
         <div className="audience__body">
@@ -30,7 +30,7 @@ export default function Audience() {
               </article>
             ))}
           </div>
-          <a className="text-link section__hint" data-reveal href={telegramHref(audience.message)}>
+          <a className="text-link section__hint" data-reveal href={telegramHref(audience.message)} rel="noopener noreferrer">
             {audience.hint}
           </a>
         </div>

@@ -53,6 +53,7 @@ export default function Services() {
                 <a
                   className={`button ${item.featured ? 'button--primary' : 'button--ghost'}`}
                   href={telegramHref(item.message)}
+                  rel="noopener noreferrer"
                 >
                   {item.cta}
                 </a>

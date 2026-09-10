@@ -3,22 +3,202 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Name Studio — сайты для бизнеса за 7–14 дней</title>
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>Name Studio — визитка и лендинг за 7–14 дней</title>
     <meta
       name="description"
-      content="Визитки и лендинги для малого бизнеса и экспертов. Понятная цена, срок 7–14 дней, заявка в Telegram."
+      content="Студия сайтов для малого бизнеса и экспертов. Визитка от 35 000 ₽, лендинг от 55 000 ₽. Цену и срок фиксируем до старта. Заявка в Telegram."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Name Studio" />
     <meta name="theme-color" content="#04110d" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://namewebstudio.com/" />
+
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Name Studio" />
+    <meta property="og:url" content="https://namewebstudio.com/" />
+    <meta property="og:title" content="Name Studio — визитка и лендинг за 7–14 дней" />
+    <meta
+      property="og:description"
+      content="Сайт, с которого вам напишут. Визитка или лендинг за 7–14 дней. Цена до старта, заявка в Telegram."
+    />
+    <meta property="og:image" content="https://namewebstudio.com/media/hero-poster.jpg" />
+    <meta property="og:image:alt" content="Name Studio — студия сайтов для бизнеса" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Name Studio — визитка и лендинг за 7–14 дней" />
+    <meta
+      name="twitter:description"
+      content="Сайт, с которого вам напишут. Визитка или лендинг за 7–14 дней. Цена до старта, заявка в Telegram."
+    />
+    <meta name="twitter:image" content="https://namewebstudio.com/media/hero-poster.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="/media/hero-poster.jpg" />
+    <link rel="preload" as="image" href="/media/hero-poster.jpg" fetchpriority="high" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://namewebstudio.com/#organization",
+            "name": "Name Studio",
+            "url": "https://namewebstudio.com/",
+            "logo": "https://namewebstudio.com/logo.png",
+            "image": "https://namewebstudio.com/media/hero-poster.jpg",
+            "description": "Студия сайтов: визитки и лендинги для малого бизнеса и экспертов. Срок 7–14 дней, цена фиксируется до старта.",
+            "sameAs": ["https://t.me/namestudio"],
+            "areaServed": { "@type": "Country", "name": "RU" },
+            "priceRange": "₽₽",
+            "knowsLanguage": "ru"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://namewebstudio.com/#website",
+            "url": "https://namewebstudio.com/",
+            "name": "Name Studio",
+            "inLanguage": "ru-RU",
+            "publisher": { "@id": "https://namewebstudio.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://namewebstudio.com/#webpage",
+            "url": "https://namewebstudio.com/",
+            "name": "Name Studio — визитка и лендинг за 7–14 дней",
+            "description": "Студия сайтов для малого бизнеса и экспертов. Визитка от 35 000 ₽, лендинг от 55 000 ₽.",
+            "isPartOf": { "@id": "https://namewebstudio.com/#website" },
+            "about": { "@id": "https://namewebstudio.com/#organization" },
+            "inLanguage": "ru-RU",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://namewebstudio.com/media/hero-poster.jpg"
+            }
+          },
+          {
+            "@type": "OfferCatalog",
+            "@id": "https://namewebstudio.com/#offers",
+            "name": "Услуги Name Studio",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Сайт-визитка",
+                "url": "https://namewebstudio.com/#services",
+                "priceCurrency": "RUB",
+                "price": "35000",
+                "availability": "https://schema.org/InStock",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Сайт-визитка",
+                  "description": "5–7 блоков, мобильная версия, кнопка в Telegram. Срок 7 дней."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Лендинг под заявки",
+                "url": "https://namewebstudio.com/#services",
+                "priceCurrency": "RUB",
+                "price": "55000",
+                "availability": "https://schema.org/InStock",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Лендинг под заявки",
+                  "description": "Оффер, услуги, цена на виду, один путь в Telegram. Срок 10–14 дней."
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Доработка сайта",
+                "url": "https://namewebstudio.com/#services",
+                "priceCurrency": "RUB",
+                "price": "25000",
+                "availability": "https://schema.org/InStock",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Доработка сайта",
+                  "description": "Новая структура, тексты, мобильная версия, кнопка заявки. Срок 7–10 дней."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://namewebstudio.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Сколько стоит сайт-визитка?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ориентир — от 35 000 ₽, срок 7 дней. Точную сумму фиксируем в Telegram до старта работы."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Сколько делается лендинг?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Лендинг под заявки собираем за 10–14 дней. Ориентир по цене — от 55 000 ₽."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Что написать в первом сообщении?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Три строки: кто вы и что продаёте, визитка или лендинг, есть ли срок. Этого хватает для сметы."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Что входит в цену?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Структура, тексты, вёрстка, мобильная версия и кнопка заявки. Домен, копирайт с нуля и сложные интеграции — отдельно, озвучиваем до старта."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Как вы работаете после сдачи?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "В пакет входят два круга правок. После сдачи не пропадаем: есть понятный пакет поддержки."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <noscript>
+      <main>
+        <h1>Name Studio — сайт, с которого вам напишут</h1>
+        <p>
+          Визитка или лендинг для малого бизнеса и экспертов. Цену и срок фиксируем до старта
+          работы. Срок 7–14 дней, заявка в Telegram.
+        </p>
+        <h2>Услуги</h2>
+        <ul>
+          <li>Сайт-визитка — от 35 000 ₽, 7 дней</li>
+          <li>Лендинг под заявки — от 55 000 ₽, 10–14 дней</li>
+          <li>Доработка сайта — от 25 000 ₽, 7–10 дней</li>
+        </ul>
+        <p><a href="https://t.me/namestudio">Написать в Telegram @namestudio</a></p>
+      </main>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -35,7 +35,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           disablePictureInPicture
         />
         <div className="hero__veil" />
@@ -64,6 +64,7 @@ export default function Hero() {
               className="button button--primary button--lg hero-enter"
               style={{ '--d': '0.72s' }}
               href={telegramHref(hero.message)}
+              rel="noopener noreferrer"
             >
               {hero.cta}
             </a>

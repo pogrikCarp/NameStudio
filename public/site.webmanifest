@@ -1,0 +1,16 @@
+{
+  "name": "Name Studio",
+  "short_name": "Name Studio",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#04110d",
+  "theme_color": "#04110d",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

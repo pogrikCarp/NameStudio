@@ -12,6 +12,7 @@ import Process from './components/Process';
 import WhyUs from './components/WhyUs';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
+import Faq from './components/Faq';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -19,11 +20,14 @@ export default function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main">
+        К содержанию
+      </a>
       <Atmosphere />
       <ScrollSpores />
       <RootLine />
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <BrandMarquee />
         <Audience />
@@ -32,6 +36,7 @@ export default function App() {
         <Process />
         <WhyUs />
         <Pricing />
+        <Faq />
         <Contact />
       </main>
       <Footer />

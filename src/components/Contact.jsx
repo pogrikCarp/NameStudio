@@ -20,6 +20,7 @@ export default function Contact() {
             data-reveal
             style={{ '--delay': '0.2s' }}
             href={telegramHref(contact.message)}
+            rel="noopener noreferrer"
           >
             {contact.cta}
           </a>

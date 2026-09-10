@@ -16,7 +16,7 @@ export default function Projects() {
     <section className="section projects section--divided zone zone--iris" id="projects" data-lit>
       {/* Горизонт событий из кода: фон секции, прозрачность запечена в файл */}
       <div className="projects__horizon" aria-hidden="true">
-        <img src="/media/horizon-iris.webp" alt="" loading="lazy" decoding="async" />
+        <img src="/media/horizon-iris.webp" alt="" width="1600" height="400" loading="lazy" decoding="async" />
       </div>
 
       <div className="wrap">
@@ -26,6 +26,11 @@ export default function Projects() {
         <h2 data-reveal style={{ '--delay': '0.08s' }}>
           {projects.title}
         </h2>
+        {projects.note ? (
+          <p className="section__text" data-reveal style={{ '--delay': '0.12s' }}>
+            {projects.note}
+          </p>
+        ) : null}
         <div className="project-list">
           {projects.items.map((item, index) => (
             <article
@@ -65,6 +70,7 @@ export default function Projects() {
           className="button button--primary button--lg projects-cta"
           data-reveal
           href={telegramHref(projects.message)}
+          rel="noopener noreferrer"
         >
           {projects.cta}
         </a>

@@ -21,7 +21,7 @@ export default function Header() {
           <span className="brand__name">{brand.name}</span>
         </a>
 
-        <nav className={`main-nav ${open ? 'main-nav--open' : ''}`} aria-label="Навигация">
+        <nav className={`main-nav ${open ? 'main-nav--open' : ''}`} id="site-nav" aria-label="Навигация">
           <ul className="main-nav__list">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -34,7 +34,7 @@ export default function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <a className="button button--primary button--sm" href={telegramHref(hero.message)}>
+          <a className="button button--primary button--sm" href={telegramHref(hero.message)} rel="noopener noreferrer">
             Обсудить задачу
           </a>
           <button
@@ -42,6 +42,7 @@ export default function Header() {
             className={`burger ${open ? 'burger--open' : ''}`}
             aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
             aria-expanded={open}
+            aria-controls="site-nav"
             onClick={() => setOpen((value) => !value)}
           >
             <span />
