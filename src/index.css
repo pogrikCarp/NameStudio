@@ -1655,6 +1655,129 @@ h3 {
 }
 
 /* ============================================================
+   Адаптив: живой телефон. Видео — экран, PNG-рамка сверху.
+   Свет зоны — фиолетовый, как у цифровой середины страницы.
+   ============================================================ */
+
+.adapt {
+  overflow: hidden;
+}
+
+.adapt__grid {
+  display: grid;
+  gap: 36px;
+  align-items: center;
+}
+
+.adapt__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+}
+
+.adapt__glow {
+  position: absolute;
+  width: min(78%, 340px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgb(107 43 255 / 0.42), transparent 68%),
+    radial-gradient(circle at 70% 30%, rgb(15 153 255 / 0.28), transparent 60%);
+  pointer-events: none;
+}
+
+.adapt__phone {
+  position: relative;
+  z-index: 1;
+  width: min(70vw, 280px);
+  animation: phoneFloat 5.4s ease-in-out infinite;
+}
+
+.adapt__screen {
+  position: absolute;
+  /* Внутреннее стекло мокапа после обрезки кадра */
+  top: 1.23%;
+  left: 4.82%;
+  width: 90.76%;
+  height: 94.35%;
+  border-radius: 12.5% / 6.4%;
+  overflow: hidden;
+  background: #05070c;
+}
+
+.adapt__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.adapt__video.is-live {
+  opacity: 1;
+}
+
+.adapt__frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.45));
+}
+
+.adapt__copy .section__text {
+  max-width: 42ch;
+}
+
+.adapt__points {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 28px;
+  padding: 0;
+  list-style: none;
+  max-width: 44ch;
+}
+
+.adapt__points li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 12px;
+  color: var(--ink-soft);
+  font-size: clamp(0.92rem, 2.1vw, 1.02rem);
+  line-height: 1.45;
+}
+
+.adapt__points li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-top: 0.55em;
+  border-radius: 50%;
+  background: rgb(var(--mood-a));
+  box-shadow: 0 0 10px rgb(var(--mood-a) / 0.7);
+}
+
+.adapt__trust {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+@keyframes phoneFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ============================================================
    Услуги: руки справа от текста.
    У кадра свой альфа-канал, поэтому ни рамки, ни blend не нужны.
    ============================================================ */
@@ -2180,6 +2303,16 @@ h3 {
     min-height: 100%;
   }
 
+  .adapt__grid {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+  }
+
+  .adapt__phone {
+    width: min(100%, 300px);
+  }
+
   .why__branch {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
@@ -2295,6 +2428,19 @@ h3 {
 
   .services__anim {
     justify-items: end;
+  }
+
+  .adapt__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .adapt__phone {
+    width: min(100%, 340px);
+  }
+
+  .adapt__stage {
+    min-height: 520px;
   }
 }
 

@@ -17,6 +17,7 @@ export const navLinks = [
   { href: '#audience', label: 'Для кого' },
   { href: '#services', label: 'Услуги' },
   { href: '#projects', label: 'Проекты' },
+  { href: '#adapt', label: 'Адаптив' },
   { href: '#pricing', label: 'Цены' },
   { href: '#faq', label: 'Вопросы' },
 ];
@@ -187,6 +188,23 @@ export const projects = {
       },
     },
   ],
+};
+
+export const adapt = {
+  eyebrow: 'На любом экране',
+  title: 'Адаптивность под все устройства',
+  text: 'Гость откроет сайт с телефона. Если кнопка уехала за край — заявки не будет. На видео — TUMAN: бронь на месте, с узкого экрана.',
+  points: [
+    'С 320px до большого монитора — одна вёрстка, без отдельной «мобильной копии»',
+    'Стыки экранов без скачков: телефон, планшет, ноутбук',
+    'Картинки и 3D остаются чёткими на Retina',
+    'Страница открывается быстро на 4G, не только на Wi‑Fi',
+  ],
+  cta: 'Написать в Telegram',
+  trust: 'Работает на iPhone, Android и в браузере',
+  message: 'Здравствуйте! Нужен адаптивный сайт. Ниша: . Тип: визитка / лендинг.',
+  video: '/media/tuman-adapt.mp4',
+  phone: '/media/phone-mockup.webp',
 };
 
 export const process = {

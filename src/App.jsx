@@ -8,6 +8,7 @@ import BrandMarquee from './components/BrandMarquee';
 import Audience from './components/Audience';
 import Services from './components/Services';
 import Projects from './components/Projects';
+import Adapt from './components/Adapt';
 import Process from './components/Process';
 import WhyUs from './components/WhyUs';
 import Pricing from './components/Pricing';
@@ -33,6 +34,7 @@ export default function App() {
         <Audience />
         <Services />
         <Projects />
+        <Adapt />
         <Process />
         <WhyUs />
         <Pricing />
