@@ -2,40 +2,6 @@ import { projects, telegramHref } from '../data/content';
 import CaseChart from './CaseChart';
 import LoopVideo from './LoopVideo';
 
-function ProjectSide({ item, index }) {
-  return (
-    <div className="project__side">
-      <div className={`project__preview project__preview--${item.id}`}>
-        <span className="project__index">0{index}</span>
-        <CaseChart metrics={item.metrics} />
-      </div>
-      <div className="project__body">
-        <p className="card__meta">{item.niche}</p>
-        <h3>{item.title}</h3>
-        <dl className="project__facts">
-          <div>
-            <dt>Задача</dt>
-            <dd>{item.task}</dd>
-          </div>
-          <div>
-            <dt>Решение</dt>
-            <dd>{item.solution}</dd>
-          </div>
-          <div className="is-result">
-            <dt>Результат</dt>
-            <dd>{item.result}</dd>
-          </div>
-        </dl>
-        {item.href ? (
-          <a className="text-link" href={item.href} target="_blank" rel="noreferrer">
-            Смотреть сайт
-          </a>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
 export default function Projects() {
   return (
     <section className="section projects section--divided zone zone--iris" id="projects" data-lit>
@@ -66,7 +32,33 @@ export default function Projects() {
               <div className="project__media" aria-hidden="true">
                 <LoopVideo className="project__video" src={item.video} />
               </div>
-              <ProjectSide item={item} index={index + 1} />
+              <div className={`project__preview project__preview--${item.id}`}>
+                <span className="project__index">0{index + 1}</span>
+                <CaseChart metrics={item.metrics} />
+              </div>
+              <div className="project__body">
+                <p className="card__meta">{item.niche}</p>
+                <h3>{item.title}</h3>
+                <dl className="project__facts">
+                  <div>
+                    <dt>Задача</dt>
+                    <dd>{item.task}</dd>
+                  </div>
+                  <div>
+                    <dt>Решение</dt>
+                    <dd>{item.solution}</dd>
+                  </div>
+                  <div className="is-result">
+                    <dt>Результат</dt>
+                    <dd>{item.result}</dd>
+                  </div>
+                </dl>
+                {item.href ? (
+                  <a className="text-link" href={item.href} target="_blank" rel="noreferrer">
+                    Смотреть сайт
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
