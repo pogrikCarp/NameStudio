@@ -13,17 +13,29 @@ export default function LoopVideo({ src, className, ...rest }) {
     if (!video) return undefined;
 
     const kick = () => {
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
       const started = video.play();
       if (started && typeof started.catch === 'function') started.catch(() => {});
+    };
+
+    const restart = () => {
+      video.currentTime = 0;
+      kick();
     };
 
     const reveal = () => video.classList.add('is-live');
     if (video.readyState >= 2) reveal();
     video.addEventListener('loadeddata', reveal);
+    video.addEventListener('ended', restart);
 
     if (typeof IntersectionObserver === 'undefined') {
       kick();
-      return () => video.removeEventListener('loadeddata', reveal);
+      return () => {
+        video.removeEventListener('loadeddata', reveal);
+        video.removeEventListener('ended', restart);
+      };
     }
 
     const observer = new IntersectionObserver(
@@ -35,8 +47,9 @@ export default function LoopVideo({ src, className, ...rest }) {
     return () => {
       observer.disconnect();
       video.removeEventListener('loadeddata', reveal);
+      video.removeEventListener('ended', restart);
     };
-  }, []);
+  }, [src]);
 
   return (
     <video
@@ -47,7 +60,7 @@ export default function LoopVideo({ src, className, ...rest }) {
       loop
       muted
       playsInline
-      preload="metadata"
+      preload="auto"
       disablePictureInPicture
       aria-hidden="true"
       {...rest}
