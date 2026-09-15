@@ -1,5 +1,5 @@
 /** Заменить username на рабочий Telegram студии */
-export const telegramUser = 'namestudio';
+export const telegramUser = 'Fil_Smirnov';
 
 export const telegramHref = (message) => {
   const base = `https://t.me/${telegramUser}`;
