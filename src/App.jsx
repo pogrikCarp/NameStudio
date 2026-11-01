@@ -5,13 +5,14 @@ import RootLine from './components/RootLine';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import BrandMarquee from './components/BrandMarquee';
+import Audit from './components/Audit';
 import Audience from './components/Audience';
 import Services from './components/Services';
 import Projects from './components/Projects';
 import Adapt from './components/Adapt';
 import Process from './components/Process';
 import WhyUs from './components/WhyUs';
-import Pricing from './components/Pricing';
+import Support from './components/Support';
 import Contact from './components/Contact';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
@@ -31,13 +32,14 @@ export default function App() {
       <main id="main">
         <Hero />
         <BrandMarquee />
-        <Audience />
-        <Services />
+        <Audit />
         <Projects />
+        <Services />
+        <Audience />
         <Adapt />
         <Process />
         <WhyUs />
-        <Pricing />
+        <Support />
         <Faq />
         <Contact />
       </main>

@@ -3,9 +3,9 @@ export const site = {
   url: 'https://namewebstudio.com',
   locale: 'ru_RU',
   lang: 'ru',
-  title: 'Name Studio — визитка и лендинг за 7–14 дней',
+  title: 'Name Studio — сайты, веб-сервисы и Telegram-боты',
   description:
-    'Студия сайтов для малого бизнеса и экспертов. Визитка от 35 000 ₽, лендинг от 55 000 ₽. Цену и срок фиксируем до старта. Заявка в Telegram.',
+    'Разрабатываем сайты, веб-сервисы и Telegram-ботов для экспертов, команд и компаний. Бесплатный аудит и первый месяц поддержки после запуска.',
   ogImage: 'https://namewebstudio.com/media/hero-poster.jpg',
   logo: 'https://namewebstudio.com/logo.png',
   telegram: 'https://t.me/name_manager',

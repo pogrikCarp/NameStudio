@@ -30,11 +30,26 @@ export default function Projects() {
               key={item.id}
             >
               <div className="project__media" aria-hidden="true">
-                <LoopVideo className="project__video" src={item.video} />
+                {item.video ? (
+                  <LoopVideo className="project__video" src={item.video} />
+                ) : (
+                  <div className="project__media-placeholder">
+                    <span>NS</span>
+                    <b>{item.visualTag}</b>
+                  </div>
+                )}
               </div>
               <div className={`project__preview project__preview--${item.id}`}>
                 <span className="project__index">0{index + 1}</span>
-                <CaseChart metrics={item.metrics} />
+                {item.metrics ? (
+                  <CaseChart metrics={item.metrics} />
+                ) : (
+                  <ul className="project__deliverables">
+                    {item.deliverables.map((deliverable) => (
+                      <li key={deliverable}>{deliverable}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div className="project__body">
                 <p className="card__meta">{item.niche}</p>

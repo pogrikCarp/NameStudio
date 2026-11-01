@@ -1,4 +1,4 @@
-import { services, telegramHref } from '../data/content';
+import { servicePool, services, telegramHref } from '../data/content';
 import LoopVideo from './LoopVideo';
 
 export default function Services() {
@@ -24,7 +24,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="card-grid card-grid--3">
+        <div className="card-grid services__grid">
           {services.items.map((item, index) => (
             <article
               className={`card card--service ${item.featured ? 'card--featured' : ''}`}
@@ -38,7 +38,7 @@ export default function Services() {
                 <span className="card__num">0{index + 1}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-                <ul className="price-list">
+                <ul className="feature-list">
                   {item.points.map((point) => (
                     <li key={point}>{point}</li>
                   ))}
@@ -46,10 +46,6 @@ export default function Services() {
               </div>
 
               <div className="card__foot">
-                <p className="card__pricerow">
-                  <b>{item.price}</b>
-                  <span>{item.term}</span>
-                </p>
                 <a
                   className={`button ${item.featured ? 'button--primary' : 'button--ghost'}`}
                   href={telegramHref(item.message)}
@@ -60,6 +56,50 @@ export default function Services() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="service-pool">
+          <div className="service-pool__head">
+            <div>
+              <p className="eyebrow" data-reveal>
+                {servicePool.eyebrow}
+              </p>
+              <h2 data-reveal style={{ '--delay': '0.08s' }}>
+                {servicePool.title}
+              </h2>
+            </div>
+            <p className="section__text" data-reveal style={{ '--delay': '0.14s' }}>
+              {servicePool.text}
+            </p>
+          </div>
+
+          <div className="service-pool__grid">
+            {servicePool.groups.map((group, groupIndex) => (
+              <article
+                className="service-pool__group"
+                data-reveal
+                style={{ '--delay': `${0.12 + groupIndex * 0.06}s` }}
+                key={group.title}
+              >
+                <div className="service-pool__title">
+                  <span>0{groupIndex + 1}</span>
+                  <h3>{group.title}</h3>
+                </div>
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="service-pool__footer" data-reveal>
+            <p>{servicePool.note}</p>
+            <a className="button button--primary" href={telegramHref(servicePool.message)} rel="noopener noreferrer">
+              {servicePool.cta}
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -35,7 +35,7 @@ export default function Header() {
 
         <div className="site-header__actions">
           <a className="button button--primary button--sm" href={telegramHref(hero.message)} rel="noopener noreferrer">
-            Обсудить задачу
+            Бесплатный аудит
           </a>
           <button
             type="button"

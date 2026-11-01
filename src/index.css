@@ -1016,8 +1016,7 @@ h3 {
   pointer-events: none;
 }
 
-.card--service,
-.card--price {
+.card--service {
   align-content: space-between;
   gap: 18px;
 }
@@ -1067,37 +1066,6 @@ h3 {
   gap: 14px;
 }
 
-.card__pricerow {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 0.88rem;
-}
-
-.card__pricerow b {
-  font-weight: 500;
-  color: var(--neon);
-}
-
-.card__pricerow span {
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-
-.card__price {
-  font-family: var(--mono);
-  font-size: 1.7rem;
-  font-weight: 500;
-  line-height: 1.1;
-  color: var(--neon);
-  /* Цифры равной ширины: пока сумма досчитывается, строка не дёргается */
-  font-variant-numeric: tabular-nums;
-}
-
 .card--featured {
   position: relative;
   border-color: rgba(0, 245, 138, 0.48);
@@ -1106,7 +1074,7 @@ h3 {
   box-shadow: 0 24px 60px -30px rgba(0, 245, 138, 0.48);
 }
 
-/* Блик по рамке — один раз и только на рекомендованном тарифе */
+/* Блик по рамке — один раз и только на рекомендованной карточке */
 .card--featured::after {
   content: '';
   position: absolute;
@@ -1153,7 +1121,7 @@ h3 {
   color: var(--ink-soft);
 }
 
-.price-list {
+.feature-list {
   display: grid;
   gap: 9px;
   padding: 4px 0 0;
@@ -1163,12 +1131,12 @@ h3 {
   font-size: 0.95rem;
 }
 
-.price-list li {
+.feature-list li {
   display: flex;
   gap: 10px;
 }
 
-.price-list li::before {
+.feature-list li::before {
   content: '';
   flex-shrink: 0;
   width: 5px;
@@ -1178,7 +1146,7 @@ h3 {
   background: var(--moss);
 }
 
-.card--featured .price-list li::before {
+.card--featured .feature-list li::before {
   background: var(--neon);
 }
 
@@ -1361,6 +1329,35 @@ h3 {
   opacity: 1;
 }
 
+.project__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 245, 138, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 138, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 50% 42%, rgba(0, 245, 138, 0.25), transparent 56%);
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+.project__media-placeholder span {
+  font-family: var(--display);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--neon);
+  text-shadow: 0 0 22px rgba(0, 245, 138, 0.54);
+}
+
+.project__media-placeholder b {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+
 .project__preview {
   position: relative;
   min-height: 0;
@@ -1380,6 +1377,30 @@ h3 {
 
 .project__preview--venue {
   background: radial-gradient(circle at 42% 42%, rgba(198, 154, 106, 0.16), transparent 70%);
+}
+
+.project__preview--media-bot {
+  background: radial-gradient(circle at 50% 40%, rgba(0, 245, 138, 0.16), transparent 70%);
+}
+
+.project__deliverables {
+  display: grid;
+  gap: 10px;
+  width: min(190px, 100%);
+  margin: 0;
+  padding: 26px 8px 8px;
+  list-style: none;
+}
+
+.project__deliverables li {
+  padding: 9px 10px;
+  border: 1px solid rgb(var(--mood-a) / 0.28);
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  background: rgb(var(--mood-bg) / 0.62);
 }
 
 .project__index {
@@ -1685,6 +1706,182 @@ h3 {
 .projects-cta,
 .contact-cta {
   width: 100%;
+}
+
+/* ============================================================
+   Бесплатный аудит — входной продукт сразу после первого экрана.
+   ============================================================ */
+
+.audit {
+  overflow: hidden;
+}
+
+.audit__grid {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+
+.audit__points {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audit__points li {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  color: var(--ink-soft);
+}
+
+.audit__points span {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--neon);
+}
+
+.audit__result {
+  display: grid;
+  gap: 20px;
+  padding: clamp(24px, 5vw, 40px);
+  border: 1px solid rgba(0, 245, 138, 0.38);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(90% 120% at 100% 0%, rgba(0, 245, 138, 0.16), transparent 62%),
+    rgba(4, 24, 17, 0.86);
+  box-shadow: 0 28px 70px -42px rgba(0, 245, 138, 0.6);
+}
+
+.audit__result-text {
+  color: var(--ink);
+  font-size: clamp(1.08rem, 2.4vw, 1.32rem);
+  line-height: 1.5;
+}
+
+.audit__note {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.services__grid {
+  grid-template-columns: 1fr;
+}
+
+.service-pool {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid rgb(var(--mood-a) / 0.28);
+}
+
+.service-pool__head {
+  display: grid;
+  gap: 18px;
+  align-items: end;
+}
+
+.service-pool__head .section__text {
+  margin-top: 0;
+}
+
+.service-pool__grid {
+  display: grid;
+  gap: 12px;
+}
+
+.service-pool__group {
+  padding: 22px;
+  border: 1px solid rgb(var(--mood-a) / 0.25);
+  border-radius: var(--radius);
+  background: rgb(var(--mood-bg) / 0.72);
+}
+
+.service-pool__title {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+}
+
+.service-pool__title span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--neon);
+}
+
+.service-pool__group ul {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-pool__group li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.service-pool__group li::before {
+  content: '';
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 9px var(--neon);
+}
+
+.service-pool__footer {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: linear-gradient(100deg, rgba(0, 245, 138, 0.12), rgba(0, 221, 198, 0.05));
+}
+
+.service-pool__footer p {
+  max-width: 64ch;
+  color: var(--ink-soft);
+}
+
+/* ============================================================
+   Поддержка после запуска.
+   ============================================================ */
+
+.support__card {
+  align-content: start;
+  gap: 12px;
+}
+
+.support__card p {
+  color: var(--muted);
+}
+
+.support__footer {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  margin-top: 26px;
+}
+
+.support__footer .section__note {
+  margin-top: 0;
 }
 
 /* ============================================================
@@ -2328,6 +2525,27 @@ h3 {
     width: auto;
   }
 
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-pool__head,
+  .service-pool__footer {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  }
+
+  .service-pool__footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .service-pool__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support__footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
   .project--left,
   .project--right {
     grid-template-columns: 240px 200px minmax(0, 1fr);
@@ -2386,6 +2604,11 @@ h3 {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 56px;
     align-items: end;
+  }
+
+  .audit__grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    gap: 64px;
   }
 
   .hero__brief {
