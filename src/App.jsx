@@ -1,4 +1,5 @@
 import useReveal from './hooks/useReveal';
+import useAnalytics from './hooks/useAnalytics';
 import Atmosphere from './components/Atmosphere';
 import ScrollSpores from './components/ScrollSpores';
 import RootLine from './components/RootLine';
@@ -19,6 +20,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   useReveal();
+  useAnalytics();
 
   return (
     <>
