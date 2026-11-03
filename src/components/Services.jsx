@@ -27,7 +27,7 @@ export default function Services() {
         <div className="card-grid services__grid">
           {services.items.map((item, index) => (
             <article
-              className={`card card--service ${item.featured ? 'card--featured' : ''}`}
+              className={`card card--service ${item.featured ? 'card--featured' : ''} ${item.mvp ? 'card--mvp' : ''}`}
               data-reveal
               style={{ '--delay': `${0.16 + index * 0.1}s` }}
               key={item.title}
