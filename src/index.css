@@ -790,6 +790,16 @@ h3 {
   justify-items: stretch;
 }
 
+.hero__copy h1 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 5.2vw, 3.65rem);
+}
+
+.hero__copy h1 .accent {
+  display: block;
+  margin-top: 0.08em;
+}
+
 .hero__actions {
   display: grid;
   gap: 10px;
