@@ -1,4 +1,5 @@
 import { contact, telegramHref, telegramUser } from '../data/content';
+import BriefForm from './BriefForm';
 import LoopVideo from './LoopVideo';
 
 export default function Contact() {
@@ -15,18 +16,13 @@ export default function Contact() {
           <p className="section__text" data-reveal style={{ '--delay': '0.14s' }}>
             {contact.text}
           </p>
-          <a
-            className="button button--primary button--lg contact-cta"
-            data-reveal
-            style={{ '--delay': '0.2s' }}
-            href={telegramHref(contact.message)}
-            rel="noopener noreferrer"
-          >
-            {contact.cta}
-          </a>
+          <BriefForm />
           <p className="contact__meta" data-reveal style={{ '--delay': '0.26s' }}>
             <span>@{telegramUser}</span>
             <span>{contact.hint}</span>
+            <a href={telegramHref(contact.message)} rel="noopener noreferrer">
+              Написать без брифа
+            </a>
           </p>
         </div>
 

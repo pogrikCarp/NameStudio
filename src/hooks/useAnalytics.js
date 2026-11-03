@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const METRIKA_ID = 114000150;
 
-function reachGoal(name, params = {}) {
+export function trackGoal(name, params = {}) {
   if (typeof window.ym !== 'function') return;
   window.ym(METRIKA_ID, 'reachGoal', name, params);
 }
@@ -30,19 +30,19 @@ export default function useAnalytics() {
 
       if (href.includes('t.me/name_manager')) {
         const params = { placement, label };
-        reachGoal('telegram_click', params);
+        trackGoal('telegram_click', params);
 
         if (['header', 'hero', 'audit', 'contact', 'footer'].includes(placement)) {
-          reachGoal('audit_click', params);
+          trackGoal('audit_click', params);
         }
 
         if (placement === 'services') {
-          reachGoal('service_cta_click', params);
+          trackGoal('service_cta_click', params);
         }
       }
 
       if (placement === 'projects' && link.target === '_blank') {
-        reachGoal('project_click', { placement, label, url: href });
+        trackGoal('project_click', { placement, label, url: href });
       }
     };
 
@@ -54,7 +54,7 @@ export default function useAnalytics() {
       [50, 90].forEach((threshold) => {
         if (depth >= threshold && !sentScrollGoals.has(threshold)) {
           sentScrollGoals.add(threshold);
-          reachGoal(`scroll_${threshold}`);
+          trackGoal(`scroll_${threshold}`);
         }
       });
     };

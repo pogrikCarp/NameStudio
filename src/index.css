@@ -2294,6 +2294,88 @@ h3 {
   gap: 20px;
 }
 
+.brief-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  padding: 22px;
+  border: 1px solid rgba(0, 245, 138, 0.22);
+  border-radius: var(--radius);
+  background: rgba(3, 18, 12, 0.72);
+  box-shadow: 0 24px 70px -50px rgba(0, 245, 138, 0.7);
+}
+
+.brief-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.brief-form__field--wide,
+.brief-form__actions {
+  grid-column: 1 / -1;
+}
+
+.brief-form label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.brief-form input,
+.brief-form select,
+.brief-form textarea {
+  width: 100%;
+  border: 1px solid rgba(134, 178, 155, 0.28);
+  border-radius: 12px;
+  background: rgba(238, 255, 246, 0.055);
+  color: var(--ink);
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.brief-form input,
+.brief-form select {
+  min-height: 50px;
+  padding: 0 14px;
+}
+
+.brief-form textarea {
+  min-height: 112px;
+  padding: 13px 14px;
+  resize: vertical;
+}
+
+.brief-form input::placeholder,
+.brief-form textarea::placeholder {
+  color: rgba(180, 210, 195, 0.54);
+}
+
+.brief-form select option {
+  color: #07150f;
+}
+
+.brief-form input:focus,
+.brief-form select:focus,
+.brief-form textarea:focus {
+  border-color: rgba(0, 245, 138, 0.7);
+  background: rgba(0, 245, 138, 0.07);
+}
+
+.brief-form__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brief-form__actions p {
+  max-width: 38ch;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 /* Мшистая планета: фон кадра гасим до цвета страницы через screen */
 .contact__orb {
   display: grid;
@@ -2328,6 +2410,10 @@ h3 {
   font-family: var(--mono);
   font-size: 0.84rem;
   color: var(--muted);
+}
+
+.contact__meta a {
+  color: var(--neon);
 }
 
 .site-footer {
@@ -2848,6 +2934,27 @@ h3 {
     background: rgba(233, 245, 238, 0.04);
     color: var(--ink);
     font-size: 1.04rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .brief-form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .brief-form__field--wide,
+  .brief-form__actions {
+    grid-column: auto;
+  }
+
+  .brief-form__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .brief-form__actions .button {
+    width: 100%;
   }
 }
 
