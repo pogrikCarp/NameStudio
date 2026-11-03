@@ -1412,6 +1412,20 @@ h3 {
   filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.42));
 }
 
+/* Показываем обложку из центра присланного скриншота без боковых панелей Telegram. */
+.project__media--svoboda {
+  aspect-ratio: 1202 / 1080;
+}
+
+.project__media--svoboda .project__image {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
 .project__video.is-live {
   opacity: 1;
 }
@@ -1466,7 +1480,7 @@ h3 {
   background: radial-gradient(circle at 42% 42%, rgba(198, 154, 106, 0.16), transparent 70%);
 }
 
-.project__preview--lumipet {
+.project__preview--svoboda {
   background: radial-gradient(circle at 50% 40%, rgba(122, 51, 255, 0.2), transparent 70%);
 }
 

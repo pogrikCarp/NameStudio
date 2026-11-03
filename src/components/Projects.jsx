@@ -28,7 +28,7 @@ export default function Projects() {
               style={{ '--delay': `${0.1 + index * 0.12}s` }}
               key={item.id}
             >
-              <div className="project__media" aria-hidden={item.image ? undefined : true}>
+              <div className={`project__media project__media--${item.id}`} aria-hidden={item.image ? undefined : true}>
                 {item.video ? (
                   <LoopVideo className="project__video" src={item.video} />
                 ) : item.image ? (
@@ -36,8 +36,8 @@ export default function Projects() {
                     className="project__image"
                     src={item.image}
                     alt={item.imageAlt || ''}
-                    width="1672"
-                    height="941"
+                    width={item.imageWidth || 1672}
+                    height={item.imageHeight || 941}
                     loading="lazy"
                     decoding="async"
                   />
