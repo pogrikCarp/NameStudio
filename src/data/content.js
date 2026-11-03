@@ -165,6 +165,7 @@ export const servicePool = {
     },
     {
       title: 'Боты и автоматизация',
+      visual: '/media/pool-bots-automation.webp',
       items: [
         'Telegram-боты для продаж и поддержки',
         'Внутренние боты для команды',
@@ -175,6 +176,7 @@ export const servicePool = {
     },
     {
       title: 'Аудит и рост',
+      visual: '/media/pool-audit-growth.webp',
       items: [
         'Продуктовый и конверсионный аудит',
         'Технический аудит и план развития',
@@ -185,6 +187,7 @@ export const servicePool = {
     },
     {
       title: 'Поддержка и инфраструктура',
+      visual: '/media/pool-support-infrastructure.webp',
       items: [
         'Доработка существующих продуктов',
         'Мониторинг и гарантийная поддержка',

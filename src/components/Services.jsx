@@ -84,11 +84,17 @@ export default function Services() {
           <div className="service-pool__grid">
             {servicePool.groups.map((group, groupIndex) => (
               <article
-                className="service-pool__group"
+                className={`service-pool__group ${group.visual ? 'service-pool__group--visual' : ''}`}
                 data-reveal
                 style={{ '--delay': `${0.12 + groupIndex * 0.06}s` }}
                 key={group.title}
               >
+                {group.visual ? (
+                  <div className="service-pool__visual" aria-hidden="true">
+                    <img src={group.visual} alt="" width="1200" height="675" loading="lazy" decoding="async" />
+                  </div>
+                ) : null}
+
                 <div className="service-pool__title">
                   <span>0{groupIndex + 1}</span>
                   <h3>{group.title}</h3>
