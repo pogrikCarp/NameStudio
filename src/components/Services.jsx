@@ -27,11 +27,19 @@ export default function Services() {
         <div className="card-grid services__grid">
           {services.items.map((item, index) => (
             <article
-              className={`card card--service ${item.featured ? 'card--featured' : ''} ${item.mvp ? 'card--mvp' : ''}`}
+              className={`card card--service ${item.featured ? 'card--featured' : ''} ${item.mvp ? 'card--mvp' : ''} ${item.visuals ? 'card--has-showcase' : ''}`}
               data-reveal
               style={{ '--delay': `${0.16 + index * 0.1}s` }}
               key={item.title}
             >
+              {item.visuals ? (
+                <div className={`card__showcase card__showcase--${item.visuals.length}`} aria-hidden="true">
+                  {item.visuals.map((visual) => (
+                    <img src={visual} alt="" width="455" height="960" loading="lazy" decoding="async" key={visual} />
+                  ))}
+                </div>
+              ) : null}
+
               {item.badge ? <p className="card__badge">{item.badge}</p> : null}
 
               <div className="card__head">

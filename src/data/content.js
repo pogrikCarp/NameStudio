@@ -105,6 +105,7 @@ export const services = {
       points: ['Структура и прототип', 'Дизайн и разработка', 'SEO и аналитика'],
       cta: 'Обсудить сайт',
       featured: false,
+      visuals: ['/media/service-gusto.webp', '/media/service-nova.webp'],
       message: 'Здравствуйте! Хочу обсудить разработку сайта. Задача: .',
     },
     {
@@ -122,6 +123,7 @@ export const services = {
       points: ['Проектирование продукта', 'Frontend и backend', 'Интеграции и роли'],
       cta: 'Обсудить сервис',
       featured: false,
+      visuals: ['/media/service-skillify.webp', '/media/service-kaifuso.webp'],
       message: 'Здравствуйте! Хочу обсудить веб-сервис. Пользователи и главная задача: .',
     },
     {
@@ -130,6 +132,7 @@ export const services = {
       points: ['Технический аудит', 'API и автоматизация', 'Производительность и UX'],
       cta: 'Обсудить доработку',
       featured: false,
+      visuals: ['/media/service-pulse.webp'],
       message: 'Здравствуйте! Нужна доработка продукта. Ссылка: . Проблема: .',
     },
     {
