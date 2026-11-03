@@ -44,6 +44,10 @@ export default function useAnalytics() {
       if (placement === 'projects' && link.target === '_blank') {
         trackGoal('project_click', { placement, label, url: href });
       }
+
+      if (href.includes('instagram.com/name.webstudio')) {
+        trackGoal('instagram_click', { placement, label });
+      }
     };
 
     const handleScroll = () => {

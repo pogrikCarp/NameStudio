@@ -1,6 +1,5 @@
-import { contact, telegramHref, telegramUser } from '../data/content';
+import { contact, instagramHandle, instagramUrl, telegramHref, telegramUser } from '../data/content';
 import BriefForm from './BriefForm';
-import LoopVideo from './LoopVideo';
 
 export default function Contact() {
   return (
@@ -26,9 +25,15 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="contact__orb" aria-hidden="true">
-          <LoopVideo className="contact__orb-media" src="/media/planet.mp4" />
-        </div>
+        <aside className="contact__social" data-reveal aria-label="Instagram Name Studio">
+          <p className="card__meta">Разборы и процесс</p>
+          <h3>Следите за студией в Instagram</h3>
+          <p>Показываем разборы сайтов, рабочий процесс и новые кейсы.</p>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${instagramHandle}`}>
+            <img src="/instagram-qr.png" alt={`QR-код Instagram ${instagramHandle}`} width="512" height="512" loading="lazy" />
+            <span>{instagramHandle}</span>
+          </a>
+        </aside>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { brand, footer, footerLinks, navLinks, telegramHref, contact } from '../data/content';
+import { brand, contact, footer, footerLinks, instagramHandle, instagramUrl, navLinks, telegramHref } from '../data/content';
 
 export default function Footer() {
   return (
@@ -21,6 +21,9 @@ export default function Footer() {
           ))}
           <a href={telegramHref(contact.message)} rel="noopener noreferrer">
             {footer.cta}
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+            Instagram {instagramHandle}
           </a>
         </nav>
         <p className="site-footer__copy">{footer.copy}</p>

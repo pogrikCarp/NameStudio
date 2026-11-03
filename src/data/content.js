@@ -1,5 +1,7 @@
 /** Заменить username на рабочий Telegram студии */
 export const telegramUser = 'name_manager';
+export const instagramUrl = 'https://www.instagram.com/name.webstudio/';
+export const instagramHandle = '@name.webstudio';
 
 export const telegramHref = (message) => {
   const base = `https://t.me/${telegramUser}`;

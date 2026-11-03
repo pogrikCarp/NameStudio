@@ -2376,27 +2376,51 @@ h3 {
   font-size: 0.8rem;
 }
 
-/* Мшистая планета: фон кадра гасим до цвета страницы через screen */
-.contact__orb {
+.contact__social {
   display: grid;
-  place-items: center;
-  pointer-events: none;
+  justify-items: center;
+  gap: 12px;
+  width: min(100%, 390px);
+  margin-inline: auto;
+  padding: 28px;
+  border: 1px solid rgba(0, 245, 138, 0.2);
+  border-radius: calc(var(--radius) + 8px);
+  background:
+    radial-gradient(circle at 50% 10%, rgba(107, 43, 255, 0.22), transparent 54%),
+    rgba(3, 18, 12, 0.78);
+  text-align: center;
 }
 
-.contact__orb-media {
-  display: block;
-  width: min(440px, 84%);
+.contact__social h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+
+.contact__social > p:not(.card__meta) {
+  color: var(--muted);
+}
+
+.contact__social a {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(100%, 260px);
+  margin-top: 6px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+.contact__social img {
+  width: min(100%, 220px);
   height: auto;
-  opacity: 0;
-  transition: opacity 0.8s var(--ease);
-  mix-blend-mode: screen;
-  filter: saturate(1.8);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 74%);
-  mask-image: radial-gradient(circle at 50% 50%, #000 52%, transparent 74%);
+  padding: 12px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 54px -28px rgba(107, 43, 255, 0.9);
 }
 
-.contact__orb-media.is-live {
-  opacity: 1;
+.contact__social a:hover span {
+  color: var(--neon);
 }
 
 .contact__inner .section__text {
@@ -2876,12 +2900,8 @@ h3 {
     width: min(420px, 82%);
   }
 
-  .contact__orb-media {
-    width: min(300px, 68%);
-  }
-
-  .contact__orb-media.is-live {
-    opacity: 0.9;
+  .contact__social {
+    width: min(100%, 520px);
   }
 
   .services__media {
