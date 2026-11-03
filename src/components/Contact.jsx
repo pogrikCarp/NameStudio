@@ -30,7 +30,7 @@ export default function Contact() {
           <h3>Подписывайтесь на Telegram-канал</h3>
           <p>Показываем разборы сайтов, рабочий процесс и новые кейсы.</p>
           <a href={telegramChannelUrl} target="_blank" rel="noopener noreferrer" aria-label={`Telegram ${telegramChannelHandle}`}>
-            <img src="/telegram-channel-qr.png" alt={`QR-код Telegram ${telegramChannelHandle}`} width="512" height="512" loading="lazy" />
+            <img src="/telegram-channel-qr-dark.png" alt={`QR-код Telegram ${telegramChannelHandle}`} width="512" height="512" loading="lazy" />
             <span>{telegramChannelHandle}</span>
           </a>
         </aside>
