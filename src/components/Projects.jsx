@@ -36,8 +36,8 @@ export default function Projects() {
                     className="project__image"
                     src={item.image}
                     alt={item.imageAlt || ''}
-                    width="512"
-                    height="512"
+                    width="1672"
+                    height="941"
                     loading="lazy"
                     decoding="async"
                   />
