@@ -1,4 +1,4 @@
-import { contact, instagramHandle, instagramUrl, telegramHref, telegramUser } from '../data/content';
+import { contact, telegramChannelHandle, telegramChannelUrl, telegramHref, telegramUser } from '../data/content';
 import BriefForm from './BriefForm';
 
 export default function Contact() {
@@ -25,13 +25,13 @@ export default function Contact() {
           </p>
         </div>
 
-        <aside className="contact__social" data-reveal aria-label="Instagram Name Studio">
+        <aside className="contact__social" data-reveal aria-label="Telegram-канал Name Studio">
           <p className="card__meta">Разборы и процесс</p>
-          <h3>Следите за студией в Instagram</h3>
+          <h3>Подписывайтесь на Telegram-канал</h3>
           <p>Показываем разборы сайтов, рабочий процесс и новые кейсы.</p>
-          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${instagramHandle}`}>
-            <img src="/instagram-qr.png" alt={`QR-код Instagram ${instagramHandle}`} width="512" height="512" loading="lazy" />
-            <span>{instagramHandle}</span>
+          <a href={telegramChannelUrl} target="_blank" rel="noopener noreferrer" aria-label={`Telegram ${telegramChannelHandle}`}>
+            <img src="/telegram-channel-qr.png" alt={`QR-код Telegram ${telegramChannelHandle}`} width="512" height="512" loading="lazy" />
+            <span>{telegramChannelHandle}</span>
           </a>
         </aside>
       </div>

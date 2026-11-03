@@ -45,8 +45,8 @@ export default function useAnalytics() {
         trackGoal('project_click', { placement, label, url: href });
       }
 
-      if (href.includes('instagram.com/name.webstudio')) {
-        trackGoal('instagram_click', { placement, label });
+      if (href.includes('t.me/studio_name')) {
+        trackGoal('telegram_click', { placement, label, destination: 'channel' });
       }
     };
 
